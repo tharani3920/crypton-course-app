@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "../App.module.scss";
 
 type Course = {
   id: number;
   courseName: string;
+  courseLesson: string;
   startDate: string;
-  lessonsCompleted: number;
+  lessonsCompleted: string;
   duration: string;
+  icon: string;
 };
 
 const CourseApp: React.FC = () => {
@@ -20,9 +23,12 @@ const CourseApp: React.FC = () => {
   }, []);
 
   return (
-    <div className="app">
-      <h1>Course List</h1>
-      <table className="course-table">
+    <div className={styles.coursediv}>
+      <div className={styles.headerstyles}>
+        <h1>Course List</h1>
+        <h3>View all</h3>
+      </div>
+      <table className={styles.coursetable}>
         <thead>
           <tr>
             <th>Course Name</th>
@@ -34,10 +40,22 @@ const CourseApp: React.FC = () => {
         <tbody>
           {courses.map((course) => (
             <tr key={course.id}>
-              <td>{course.courseName}</td>
-              <td>{course.startDate}</td>
-              <td>{course.lessonsCompleted}</td>
-              <td>{course.duration}</td>
+              <td>
+                <div className={styles.courseIconText}>
+                  <img src={course.icon} alt="icon" />{" "}
+                  <div className={styles.courseDetails}>
+                    <span className={styles.courseName}>
+                      {course.courseName}
+                    </span>
+                    <span className={styles.courseLesson}>
+                      {course.courseLesson}
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td className={styles.startDate}>{course.startDate}</td>
+              <td className={styles.startDate}>{course.lessonsCompleted}</td>
+              <td className={styles.startDate}>{course.duration}</td>
             </tr>
           ))}
         </tbody>

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;1,200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: poppins;
+}
+
+.headerstyles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  cursor: pointer;
+}
+.headerstyles h3 {
+  color: rgb(117, 199, 226);
+}
+.coursetable {
+  padding: 0px 20px;
+  width: 100%;
+}
+
+.coursetable th {
+  color: #c6c6cc;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.coursetable td {
+  padding: 10px 0;
+}
+
+// .coursetable tr:nth-child(even) {
+//   background-color: #f9f9f9;
+// }
+
+.courseIconText {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.courseIconText img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 30%;
+  object-fit: cover;
+}
+.courseName {
+  font-size: 20px;
+}
+.courseDetails {
+  display: flex;
+  flex-direction: column;
+}
+.courseLesson {
+  color: #c6c6cc;
+}
+.startDate {
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  .courseName {
+    font-size: 16px;
+  }
+  .startDate {
+    font-size: 16px;
+  }
+  .courseLesson {
+    font-size: 16px;
+  }
+  .coursetable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+}
+@media (max-width: 500px) {
+  .coursetable th {
+    font-size: 16px;
+  }
+
+  .courseName {
+    font-size: 12px;
+  }
+  .startDate {
+    font-size: 12px;
+  }
+  .courseLesson {
+    font-size: 12px;
+  }
+}
